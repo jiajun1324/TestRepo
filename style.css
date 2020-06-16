@@ -1,4 +1,9 @@
-#buttons{
+a{
   text-decoration: none;
   cursor:grab;
+}
+#currentSelected{
+  width:200px;
+  height:200px;
+  border: 1px;
 }

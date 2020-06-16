@@ -5,12 +5,36 @@
     <title>My Webpage!</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript">
-    function updateCSS(){
-      document.getElementById("buttons").innerhtml = "testing123";
+    //create an array that stores colors and another with selected colors.
+    function updateCSS(currentColor){
+      var button = document.getElementById(currentColor);
+      var currentlySelected = document.getElementById('currentSelected');
+      if(currentlySelected.innerText == currentColor){
+        button.style.textDecoration = "none";
+        currentlySelected.style.backgroundColor = "white";
+        currentlySelected.innerText = "";
+      }else{
+        currentlySelected.innerText = currentColor;
+        button.style.textDecoration = "line-through";
+        currentlySelected.style.backgroundColor = currentColor;
+      }
+
     }
     </script>
   </head>
   <body>
-    <a onclick="updateCSS()" id="buttons">Blue</a>
+    <div id="currentSelected">
+      <h2></h2>
+    </div>
+    <a onclick="updateCSS('Blue')" id="Blue">Blue</a>
+    <br>
+    <br>
+    <a onclick="updateCSS('Red')" id="Red">Red</a>
+    <br>
+    <br>
+    <a onclick="updateCSS('Green')" id="Green">Green</a>
+    <br>
+    <br>
+    <a onclick="updateCSS('Orange')" id="Orange">Orange</a>
   </body>
 </html>
